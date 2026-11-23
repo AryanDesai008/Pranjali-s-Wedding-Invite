@@ -29,7 +29,7 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--cream);
-      background-color: var(--midnight);
+      background-color: #0f2d42;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
@@ -39,32 +39,12 @@
       height: auto;
     }
 
-    /* Unified Seamless Royal Scroll Canvas (zero hard horizontal block seams) */
+    /* Unified Seamless Starry Night Royal Scroll Canvas (zero hard horizontal block seams) */
     .royal-scroll {
       position: relative;
       width: 100%;
       overflow-x: hidden;
-      background: linear-gradient(
-        180deg,
-        #0c3d7f 0%,
-        #1559a6 7%,
-        #1a70ba 13%,
-        #12797a 19%,
-        #178a6c 26%,
-        #1394ae 33%,
-        #1198b7 44%,
-        #1692ad 51%,
-        #8f8d9e 55.5%,
-        #b88f94 59%,
-        #b0858a 68%,
-        #bdb067 73%,
-        #c3bc4e 77%,
-        #b5ae43 85%,
-        #394d4c 89%,
-        #0b2248 92.5%,
-        #061733 96%,
-        #040e22 100%
-      );
+      background-color: #0f2d42;
     }
 
     /* Ultra-subtle organic parchment grain across the entire scroll (no grid/block tiling) */
@@ -88,31 +68,7 @@
       align-items: center;
       gap: 10px;
     }
-    .music-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(7, 23, 51, 0.78);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(246, 220, 150, 0.36);
-      padding: 7px 14px;
-      border-radius: 999px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      color: var(--cream);
-      font-size: 12px;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-    .music-pill-title {
-      font-weight: 600;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-    .music-pill-sub {
-      font-size: 10.5px;
-      opacity: 0.85;
-      white-space: nowrap;
-    }
+
     .music-btn {
       width: 48px;
       height: 48px;
@@ -188,12 +144,23 @@
       padding-right: clamp(18px, 4vw, 36px);
     }
 
-    /* SECTION 1: HERO ROYAL COBALT SKY + FLOATING LANTERNS + PALACE */
+    /* Global Starry Night Canvas Layer */
+    #starry-bg-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* SECTION 1: STARRY NIGHT SKY + REALISTIC FLOATING LANTERNS + PALACE */
     .hero-section {
       position: relative;
-      padding-top: clamp(56px, 9vw, 92px);
+      padding-top: clamp(82px, 13vw, 112px);
       text-align: center;
       overflow: hidden;
+      background: radial-gradient(ellipse at 50% 18%, rgba(28, 62, 132, 0.42) 0%, rgba(7, 19, 44, 0.2) 55%, transparent 100%);
     }
     #lantern-canvas {
       position: absolute;
@@ -245,16 +212,18 @@
     .palace-stage {
       position: relative;
       z-index: 3;
-      max-width: 1220px;
-      margin: 6px auto 0;
+      width: 100%;
+      max-width: 1440px;
+      margin: 10px auto 0;
       line-height: 0;
     }
     .palace-stage img {
       width: 100%;
       height: auto;
       display: block;
-      mask-image: linear-gradient(to bottom, transparent 0%, black 11%, black 84%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 11%, black 84%, transparent 100%);
+      filter: brightness(0.92) contrast(1.04) saturate(1.03);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 4%, black 84%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 4%, black 84%, transparent 100%);
     }
 
     /* SECTION 2: SEAMLESS EMERALD-TEAL INVITATION + ORNATE GANESHA IDOL */
@@ -630,7 +599,7 @@
 
     /* SECTION 6: THINGS TO KNOW + FOLLOW THE ACTION (Clean, open, no blocky cards) */
     .info-section {
-      color: var(--ink-dark);
+      color: var(--cream);
       padding: clamp(54px, 7vw, 88px) 0 clamp(68px, 9vw, 108px);
       text-align: center;
     }
@@ -639,7 +608,7 @@
       font-size: clamp(1.12rem, 2.4vw, 1.36rem);
       max-width: 640px;
       margin: 10px auto 52px;
-      color: rgba(45, 39, 28, 0.88);
+      color: rgba(251, 247, 238, 0.9);
       line-height: 1.58;
     }
     .info-grid {
@@ -671,8 +640,8 @@
       width: 44px;
       height: 44px;
       margin-bottom: 14px;
-      color: var(--ink-dark);
-      opacity: 0.88;
+      color: var(--gold);
+      opacity: 0.92;
     }
     .info-item h3 {
       font-family: 'Cinzel', Georgia, serif;
@@ -680,26 +649,26 @@
       font-weight: 600;
       letter-spacing: 0.14em;
       margin-bottom: 8px;
-      color: var(--ink-dark);
+      color: var(--gold);
     }
     .info-item p {
       font-size: 0.9rem;
       line-height: 1.58;
-      color: rgba(45, 39, 28, 0.88);
+      color: rgba(251, 247, 238, 0.9);
       max-width: 260px;
     }
     .hashtag-copy-btn {
       margin-top: 12px;
-      background: var(--ink-dark);
-      color: #f7f4dc;
-      border: none;
+      background: rgba(246, 220, 150, 0.16);
+      color: #fff6dc;
+      border: 1px solid rgba(246, 220, 150, 0.55);
       border-radius: 999px;
       padding: 9px 16px;
       font-size: 0.8rem;
       font-weight: 500;
       cursor: pointer;
       min-height: 38px;
-      transition: transform 0.2s, opacity 0.2s;
+      transition: transform 0.2s, background 0.2s;
     }
     .hashtag-copy-btn:hover {
       transform: translateY(-1px);
@@ -834,14 +803,47 @@
       transform: translateX(-50%) translateY(0);
     }
 
+    @media (max-width: 768px) {
+      .venue-tabs {
+        flex-direction: column;
+        width: 100%;
+        max-width: 340px;
+      }
+      .venue-tab {
+        width: 100%;
+      }
+      .medallion-wrap {
+        width: min(260px, 76vw);
+      }
+    }
     @media (max-width: 520px) {
-      .music-pill {
-        padding: 6px 11px;
-        font-size: 11px;
+      .music-widget {
+        top: max(10px, env(safe-area-inset-top));
+        right: max(10px, env(safe-area-inset-right));
+        gap: 7px;
       }
       .music-btn {
         width: 44px;
         height: 44px;
+      }
+      .hero-date-chip {
+        padding: 6px 14px;
+        letter-spacing: 0.16em;
+      }
+      .countdown-timer {
+        gap: 6px;
+      }
+      .cd-unit {
+        min-width: 52px;
+      }
+      .mughal-mirror-wrap {
+        width: min(310px, 86vw);
+        padding: 16px 16px 20px;
+      }
+    }
+    @media (max-width: 360px) {
+      .cd-unit {
+        min-width: 46px;
       }
     }
   </style>
@@ -850,13 +852,7 @@
 
   <!-- Floating Top-Right Music Control ("Din Shagna Da" — Autoplay & Pause) -->
   <div class="music-widget">
-    <div id="musicPill" class="music-pill" role="status" aria-live="polite">
-      <div>
-        <!-- <div class="music-pill-title">Din Shagna Da</div> -->
-        <div id="musicStatusText" class="music-pill-sub"> </div>
-      </div>
-    </div>
-    <button id="musicToggleBtn" class="music-btn" type="button" aria-label="Play or pause Din Shagna Da" title="Play / Pause Din Shagna Da">
+    <button id="musicToggleBtn" class="music-btn" type="button" aria-label="Play or pause music" title="Play / Pause">
       <svg class="play-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M8 5v14l11-7z"/>
       </svg>
@@ -870,9 +866,10 @@
   </div>
 
   <!-- Embedded Attached Audio: Din Shagna Da -->
-  <audio id="weddingAudio" src="assets/web_din_shagna_da.mp3" autoplay loop playsinline preload="auto"></audio>
+  <audio id="weddingAudio" src="assets/din_shagna_da.mp3" autoplay loop playsinline preload="auto"></audio>
 
   <main class="royal-scroll">
+    <canvas id="starry-bg-canvas" aria-hidden="true"></canvas>
 
     <!-- SECTION 1: HERO ROYAL COBALT SKY + FLOATING SKY LANTERNS + PALACE -->
     <header id="home" class="flow-band hero-section">
@@ -884,7 +881,7 @@
         <div class="hero-date-chip">THURSDAY · 10 DECEMBER 2026</div>
       </div>
       <div class="palace-stage">
-        <img src="assets/web_palace_day.jpg" alt="Royal sandstone palace with bride and groom on the domed balcony overlooking a courtyard fountain" />
+        <img src="assets/palace_day.jpg" alt="Royal sandstone palace with bride and groom on the domed balcony overlooking a courtyard fountain" />
       </div>
     </header>
 
@@ -893,7 +890,7 @@
       <div class="section-inner">
         <div class="ganesh-mantra">॥ श्री गणेशाय नमः ॥</div>
         <div class="ganesh-idol-wrap">
-          <img class="ganesh-idol-img" src="assets/web_ganesha_idol.png" alt="Ornate Lord Ganesha filigree emblem" />
+          <img class="ganesh-idol-img" src="assets/ganesha_idol.png" alt="Ornate Lord Ganesha filigree emblem" />
         </div>
 
         <p class="invite-blessings">With the heavenly blessings of our elders</p>
@@ -921,7 +918,7 @@
           <article class="event-card">
             <div class="medallion-wrap">
               <div class="medallion-frame">
-                <img src="assets/web_event_mehendi.jpg" alt="Mehendi ceremony vintage illustration" />
+                <img src="user_uploaded_files/ttl=63d/tool_generated/web_event_mehendi_color.jpg" alt="Mehendi ceremony full-color royal illustration" />
               </div>
               <svg class="jasmine-cluster jasmine-tr" viewBox="0 0 90 90" aria-hidden="true">
                 <g fill="#ffffff" stroke="#d5e5d2" stroke-width="0.8">
@@ -952,7 +949,7 @@
           <article class="event-card">
             <div class="medallion-wrap">
               <div class="medallion-frame">
-                <img src="assets/web_event_sangeet.jpg" alt="Sangeet celebration vintage illustration" />
+                <img src="user_uploaded_files/ttl=63d/tool_generated/web_event_sangeet_color.jpg" alt="Sangeet celebration full-color royal illustration" />
               </div>
               <svg class="jasmine-cluster jasmine-tr" viewBox="0 0 90 90" aria-hidden="true">
                 <g fill="#ffffff" stroke="#d5e5d2" stroke-width="0.8">
@@ -983,7 +980,7 @@
           <article class="event-card">
             <div class="medallion-wrap">
               <div class="medallion-frame">
-                <img src="assets/web_event_haldi.jpg" alt="Haldi ceremony vintage illustration" />
+                <img src="user_uploaded_files/ttl=63d/tool_generated/web_event_haldi_color.jpg" alt="Haldi ceremony full-color royal illustration" />
               </div>
               <svg class="jasmine-cluster jasmine-tr" viewBox="0 0 90 90" aria-hidden="true">
                 <g fill="#ffffff" stroke="#d5e5d2" stroke-width="0.8">
@@ -1005,7 +1002,7 @@
             <p class="event-time">From 5:00 pm onwards</p>
             <p class="event-venue">Nirva Cottage Resort, Near Kondeshwar Temple Road, Dahiwali Village Bridge, Badlapur (East)</p>
             <div class="event-actions">
-              <a class="route-link" href="https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kaundeshwar+Temple+Road+Dahiwali+Badlapur+East" target="_blank" rel="noopener noreferrer">See the route</a>
+              <a class="route-link" href="https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kondeshwar+Temple+Road+Dahiwali+Badlapur+East" target="_blank" rel="noopener noreferrer">See the route</a>
               <button class="cal-btn" type="button" data-cal-event="haldi">+ Calendar</button>
             </div>
           </article>
@@ -1014,7 +1011,7 @@
           <article class="event-card">
             <div class="medallion-wrap">
               <div class="medallion-frame">
-                <img src="assets/web_event_wedding.jpg" alt="Wedding ceremony vintage illustration" />
+                <img src="user_uploaded_files/ttl=63d/tool_generated/web_event_wedding_color.jpg" alt="Wedding ceremony full-color royal illustration" />
               </div>
               <svg class="jasmine-cluster jasmine-tr" viewBox="0 0 90 90" aria-hidden="true">
                 <g fill="#ffffff" stroke="#d5e5d2" stroke-width="0.8">
@@ -1036,7 +1033,7 @@
             <p class="event-time">From 12:19 pm onwards</p>
             <p class="event-venue">Nirva Cottage Resort, Near Kondeshwar Temple Road, Dahiwali Village Bridge, Badlapur (East)</p>
             <div class="event-actions">
-              <a class="route-link" href="https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kaundeshwar+Temple+Road+Dahiwali+Badlapur+East" target="_blank" rel="noopener noreferrer">See the route</a>
+              <a class="route-link" href="https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kondeshwar+Temple+Road+Dahiwali+Badlapur+East" target="_blank" rel="noopener noreferrer">See the route</a>
               <button class="cal-btn" type="button" data-cal-event="wedding">+ Calendar</button>
             </div>
           </article>
@@ -1055,7 +1052,7 @@
             <strong>Nirva Cottage Resort</strong><br />
             Near Kondeshwar Temple (Road), Dahiwali Village Bridge, Badlapur (East)
           </div>
-          <a id="activeRouteBtn" class="pulse-circle-btn" href="https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kaundeshwar+Temple+Road+Dahiwali+Badlapur+East" target="_blank" rel="noopener noreferrer" aria-label="Open selected venue in Google Maps" title="Open in Google Maps">
+          <a id="activeRouteBtn" class="pulse-circle-btn" href="https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kondeshwar+Temple+Road+Dahiwali+Badlapur+East" target="_blank" rel="noopener noreferrer" aria-label="Open selected venue in Google Maps" title="Open in Google Maps">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z"/>
               <circle cx="12" cy="11" r="2.5"/>
@@ -1067,7 +1064,7 @@
 
     <!-- VINTAGE CAR 1: SKY-BLUE MERCEDES -->
     <div class="car-divider" aria-hidden="true">
-      <img src="assets/web_car_blue_merc.png" alt="" />
+      <img src="assets/car_blue_merc.png" alt="" />
     </div>
 
     <!-- SECTION 5: MEET THE BRIDE AND GROOM (With Attached Photo, No RSVP, No Upload Button) -->
@@ -1075,7 +1072,7 @@
       <div class="section-inner">
         <h2 class="section-heading-thin">MEET THE BRIDE<br />AND GROOM</h2>
         <p class="couple-story">
-          We are both so delighted that you are able to join us in celebrating the happiest days of our lives. The affection shown to us by so many people has been incredibly moving, and has touched us both deeply. We would like to take this opportunity to thank everyone most sincerely for their kindness. We are looking forward to seeing you at the wedding.
+          We are both so delighted that you are able to join us in celebrating what we hope will be one of the happiest days of our lives. The affection shown to us by so many people has been incredibly moving, and has touched us both deeply. We would like to take this opportunity to thank everyone most sincerely for their kindness. We are looking forward to seeing you at the wedding.
         </p>
 
         <!-- Ornate Mughal Mirror Frame with User's Attached Photo -->
@@ -1086,7 +1083,7 @@
             <circle cx="80" cy="31" r="5" fill="#c59fa3"/>
           </svg>
           <div class="mughal-mirror-inner">
-            <img src="assets/web_couple_real_2.jpg" alt="Pranjali and Manish" />
+            <img src="user_uploaded_files/ttl=63d/tool_generated/web_couple_real_2.jpg" alt="Pranjali and Manish" />
           </div>
         </div>
       </div>
@@ -1094,7 +1091,7 @@
 
     <!-- VINTAGE CAR 2: CHARCOAL-BLACK CLASSIC SEDAN -->
     <div class="car-divider" aria-hidden="true">
-      <img src="assets/web_car_black.png" alt="" />
+      <img src="assets/car_black.png" alt="" />
     </div>
 
     <!-- SECTION 6: THINGS TO KNOW + FOLLOW THE ACTION -->
@@ -1150,7 +1147,7 @@
 
         <h2 class="section-heading-thin">FOLLOW<br />THE ACTION</h2>
         <p class="section-subtitle">Tap below to share the wedding invite &amp; hashtag with family</p>
-        <button id="shareInviteBtn" class="pulse-circle-btn dark-ring" type="button" aria-label="Share wedding invitation">
+        <button id="shareInviteBtn" class="pulse-circle-btn" type="button" aria-label="Share wedding invitation">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="18" cy="5" r="3"/>
             <circle cx="6" cy="12" r="3"/>
@@ -1164,7 +1161,7 @@
 
     <!-- VINTAGE CAR 3: POWDER-BLUE CLASSIC SEDAN -->
     <div class="car-divider" aria-hidden="true">
-      <img src="assets/web_car_powder_blue.png" alt="" />
+      <img src="assets/car_powder_blue.png" alt="" />
     </div>
 
     <!-- SECTION 7: STARRY MIDNIGHT COUNTDOWN + ILLUMINATED PALACE FOOTER -->
@@ -1204,7 +1201,7 @@
       </div>
 
       <div class="night-palace-wrap">
-        <img src="assets/web_palace_night.jpg" alt="Illuminated heritage palace courtyard under a starry night sky" />
+        <img src="assets/palace_night.jpg" alt="Illuminated heritage palace courtyard under a starry night sky" />
       </div>
     </footer>
 
@@ -1253,11 +1250,118 @@
         document.body.removeChild(ta);
       }
 
-      // --- 1. Animated Floating Glowing Sky Lanterns (Canvas) ---
+      // --- 1A. Animated Starry Night Sky (Global Twinkling Stars + Subtle Shooting Stars) ---
+      var starCanvas = document.getElementById('starry-bg-canvas');
+      var starCtx = starCanvas ? starCanvas.getContext('2d') : null;
+      var stars = [];
+      var shootingStars = [];
+
+      function initStarfield() {
+        if (!starCanvas || !starCtx) return;
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        starCanvas.width = Math.max(1, Math.floor(w * dpr));
+        starCanvas.height = Math.max(1, Math.floor(h * dpr));
+        starCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        var count = w < 600 ? 110 : (w < 1024 ? 170 : 230);
+        stars = [];
+        var palette = ['#ffffff', '#fff6dc', '#dce9ff', '#ffe4ad'];
+        for (var i = 0; i < count; i++) {
+          var isBright = Math.random() < 0.12;
+          stars.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: isBright ? (1.3 + Math.random() * 1.1) : (0.45 + Math.random() * 0.95),
+            baseAlpha: isBright ? (0.65 + Math.random() * 0.35) : (0.25 + Math.random() * 0.55),
+            twinkleSpeed: 0.0012 + Math.random() * 0.0032,
+            phase: Math.random() * Math.PI * 2,
+            color: palette[Math.floor(Math.random() * palette.length)],
+            sparkle: isBright
+          });
+        }
+      }
+
+      function maybeSpawnShootingStar(w, h) {
+        if (shootingStars.length < 1 && Math.random() < 0.0045) {
+          shootingStars.push({
+            x: w * (0.15 + Math.random() * 0.7),
+            y: h * (0.04 + Math.random() * 0.28),
+            vx: 5.5 + Math.random() * 4.5,
+            vy: 2.2 + Math.random() * 2.5,
+            len: 55 + Math.random() * 65,
+            life: 0,
+            maxLife: 42 + Math.random() * 22
+          });
+        }
+      }
+
+      function drawStarfield(t) {
+        if (!starCanvas || !starCtx) return;
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        starCtx.clearRect(0, 0, w, h);
+
+        for (var i = 0; i < stars.length; i++) {
+          var st = stars[i];
+          var tw = 0.45 + 0.55 * Math.sin(t * st.twinkleSpeed + st.phase);
+          var a = st.baseAlpha * tw;
+          starCtx.globalAlpha = a;
+          starCtx.fillStyle = st.color;
+          starCtx.beginPath();
+          starCtx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+          starCtx.fill();
+
+          if (st.sparkle && tw > 0.78) {
+            starCtx.globalAlpha = a * 0.45;
+            starCtx.strokeStyle = st.color;
+            starCtx.lineWidth = 0.7;
+            var arm = st.r * 3.2;
+            starCtx.beginPath();
+            starCtx.moveTo(st.x - arm, st.y);
+            starCtx.lineTo(st.x + arm, st.y);
+            starCtx.moveTo(st.x, st.y - arm);
+            starCtx.lineTo(st.x, st.y + arm);
+            starCtx.stroke();
+          }
+        }
+
+        maybeSpawnShootingStar(w, h);
+        for (var j = shootingStars.length - 1; j >= 0; j--) {
+          var ss = shootingStars[j];
+          ss.x += ss.vx;
+          ss.y += ss.vy;
+          ss.life++;
+          var prog = ss.life / ss.maxLife;
+          var alpha = Math.sin(prog * Math.PI) * 0.75;
+          var grad = starCtx.createLinearGradient(ss.x, ss.y, ss.x - ss.vx * 8, ss.y - ss.vy * 8);
+          grad.addColorStop(0, 'rgba(255, 250, 232, ' + alpha + ')');
+          grad.addColorStop(1, 'rgba(255, 250, 232, 0)');
+          starCtx.globalAlpha = 1;
+          starCtx.strokeStyle = grad;
+          starCtx.lineWidth = 1.4;
+          starCtx.beginPath();
+          starCtx.moveTo(ss.x, ss.y);
+          starCtx.lineTo(ss.x - ss.vx * 8, ss.y - ss.vy * 8);
+          starCtx.stroke();
+          if (ss.life >= ss.maxLife) shootingStars.splice(j, 1);
+        }
+        starCtx.globalAlpha = 1;
+        requestAnimationFrame(drawStarfield);
+      }
+
+      if (starCanvas && starCtx) {
+        initStarfield();
+        window.addEventListener('resize', initStarfield);
+        requestAnimationFrame(drawStarfield);
+      }
+
+      // --- 1B. Realistic 3D Floating Sky Lanterns & Embers (Hero Canvas) ---
       var canvas = document.getElementById('lantern-canvas');
       var ctx = canvas ? canvas.getContext('2d') : null;
       var lanterns = [];
-      var lanternRaf = null;
+      var embers = [];
 
       function resizeLanterns() {
         if (!canvas || !ctx) return;
@@ -1266,27 +1370,141 @@
         canvas.width = Math.max(1, Math.floor(rect.width * dpr));
         canvas.height = Math.max(1, Math.floor(rect.height * dpr));
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        var targetCount = rect.width < 520 ? 15 : (rect.width < 900 ? 22 : 30);
         if (lanterns.length === 0) {
-          var count = rect.width < 600 ? 16 : 28;
-          for (var i = 0; i < count; i++) {
+          for (var i = 0; i < targetCount; i++) {
             lanterns.push(makeLantern(rect.width, rect.height, true));
+          }
+          // Sort back-to-front by depth so foreground lanterns naturally pass in front
+          lanterns.sort(function (a, b) { return a.depth - b.depth; });
+        }
+        if (embers.length === 0) {
+          var emberCount = rect.width < 520 ? 16 : 28;
+          for (var k = 0; k < emberCount; k++) {
+            embers.push(makeEmber(rect.width, rect.height, true));
           }
         }
       }
 
       function makeLantern(w, h, randomY) {
-        var scale = 0.45 + Math.random() * 0.95;
+        // depth: 0.28 (far distant sky) to 1.15 (close foreground)
+        var depth = 0.28 + Math.pow(Math.random(), 1.35) * 0.88;
         return {
           x: Math.random() * w,
-          y: randomY ? Math.random() * h : h + 40 + Math.random() * 100,
-          w: 22 * scale,
-          h: 32 * scale,
-          vy: 0.25 + Math.random() * 0.42,
-          swayAmp: 12 + Math.random() * 20,
-          swaySpeed: 0.004 + Math.random() * 0.006,
+          y: randomY ? Math.random() * h : h + 45 + Math.random() * 140,
+          depth: depth,
+          w: 28 * depth,
+          h: 40 * depth,
+          vy: (0.16 + Math.random() * 0.22) * (0.6 + depth * 0.7),
+          driftX: (Math.random() - 0.5) * 0.08,
+          swayAmp: (8 + Math.random() * 16) * depth,
+          swaySpeed: 0.00045 + Math.random() * 0.00055,
           phase: Math.random() * Math.PI * 2,
-          alpha: 0.52 + Math.random() * 0.42
+          flickerPhase: Math.random() * Math.PI * 2,
+          alpha: Math.min(0.96, 0.42 + depth * 0.55)
         };
+      }
+
+      function makeEmber(w, h, randomY) {
+        return {
+          x: Math.random() * w,
+          y: randomY ? Math.random() * h : h + 10 + Math.random() * 60,
+          r: 0.8 + Math.random() * 1.4,
+          vy: 0.35 + Math.random() * 0.55,
+          phase: Math.random() * Math.PI * 2,
+          alpha: 0.3 + Math.random() * 0.55
+        };
+      }
+
+      function drawRealisticLantern(ctx, l, x, y, tilt, flicker) {
+        var rw = l.w * 0.5;
+        var rh = l.h * 0.5;
+
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(tilt);
+        ctx.globalAlpha = l.alpha;
+
+        // 1. Soft atmospheric night halo around lantern
+        var haloR = l.h * 1.75;
+        var halo = ctx.createRadialGradient(0, rh * 0.25, rw * 0.1, 0, rh * 0.1, haloR);
+        halo.addColorStop(0, 'rgba(255, 226, 138, ' + (0.42 * flicker) + ')');
+        halo.addColorStop(0.32, 'rgba(245, 138, 36, ' + (0.20 * flicker) + ')');
+        halo.addColorStop(0.68, 'rgba(196, 72, 16, ' + (0.06 * flicker) + ')');
+        halo.addColorStop(1, 'rgba(196, 72, 16, 0)');
+        ctx.fillStyle = halo;
+        ctx.beginPath();
+        ctx.arc(0, rh * 0.1, haloR, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 2. Authentic Khom Loy lantern silhouette path (rounded dome + tapered rice-paper sides)
+        ctx.beginPath();
+        ctx.moveTo(-rw * 0.72, -rh * 0.86);
+        ctx.bezierCurveTo(-rw * 0.42, -rh * 1.06, rw * 0.42, -rh * 1.06, rw * 0.72, -rh * 0.86);
+        ctx.bezierCurveTo(rw * 1.08, -rh * 0.56, rw * 0.98, rh * 0.18, rw * 0.64, rh * 0.88);
+        ctx.quadraticCurveTo(0, rh * 1.02, -rw * 0.64, rh * 0.88);
+        ctx.bezierCurveTo(-rw * 0.98, rh * 0.18, -rw * 1.08, -rh * 0.56, -rw * 0.72, -rh * 0.86);
+        ctx.closePath();
+
+        // Subsurface glowing paper radial gradient (hot white-gold bottom -> rich burnt-amber dome)
+        var paperGrad = ctx.createRadialGradient(0, rh * 0.58, rw * 0.08, 0, -rh * 0.15, l.h * 1.02);
+        paperGrad.addColorStop(0, '#fffdf0');
+        paperGrad.addColorStop(0.24, '#ffe17a');
+        paperGrad.addColorStop(0.55, '#f29527');
+        paperGrad.addColorStop(0.84, '#c74c14');
+        paperGrad.addColorStop(1, '#852809');
+        ctx.fillStyle = paperGrad;
+        ctx.fill();
+
+        // Clip inside lantern body for realistic 3D shading & vertical paper ribs
+        ctx.save();
+        ctx.clip();
+
+        // Subtle cylindrical side darkening for 3D roundness
+        var sideShade = ctx.createLinearGradient(-rw, 0, rw, 0);
+        sideShade.addColorStop(0, 'rgba(92, 24, 5, 0.34)');
+        sideShade.addColorStop(0.22, 'rgba(92, 24, 5, 0.04)');
+        sideShade.addColorStop(0.5, 'rgba(255, 245, 200, 0.12)');
+        sideShade.addColorStop(0.78, 'rgba(92, 24, 5, 0.04)');
+        sideShade.addColorStop(1, 'rgba(92, 24, 5, 0.36)');
+        ctx.fillStyle = sideShade;
+        ctx.fillRect(-rw * 1.2, -rh * 1.2, rw * 2.4, rh * 2.4);
+
+        // Delicate translucent vertical paper panel seams (ribs)
+        ctx.strokeStyle = 'rgba(110, 32, 8, 0.22)';
+        ctx.lineWidth = Math.max(0.5, 0.85 * l.depth);
+        [-0.36, 0, 0.36].forEach(function (rib) {
+          ctx.beginPath();
+          ctx.moveTo(rw * rib * 0.75, -rh * 1.02);
+          ctx.quadraticCurveTo(rw * rib * 1.25, 0, rw * rib * 0.7, rh * 0.96);
+          ctx.stroke();
+        });
+        ctx.restore();
+
+        // 3. Bottom bamboo/wire rim opening (ellipse)
+        ctx.fillStyle = 'rgba(72, 22, 6, 0.78)';
+        ctx.beginPath();
+        ctx.ellipse(0, rh * 0.9, rw * 0.62, rh * 0.13, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = 'rgba(255, 210, 128, 0.55)';
+        ctx.lineWidth = Math.max(0.5, 0.7 * l.depth);
+        ctx.stroke();
+
+        // 4. Incandescent inner fuel-cell flame at base opening
+        var flameW = rw * (0.28 + 0.05 * flicker);
+        var flameH = rh * (0.26 + 0.06 * flicker);
+        var flameGrad = ctx.createRadialGradient(0, rh * 0.72, 0.5, 0, rh * 0.72, flameH * 1.5);
+        flameGrad.addColorStop(0, 'rgba(255, 255, 248, 0.98)');
+        flameGrad.addColorStop(0.45, 'rgba(255, 232, 145, 0.9)');
+        flameGrad.addColorStop(1, 'rgba(255, 160, 48, 0)');
+        ctx.fillStyle = flameGrad;
+        ctx.beginPath();
+        ctx.ellipse(0, rh * 0.72, flameW * 1.4, flameH * 1.35, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
       }
 
       function drawLanterns(t) {
@@ -1295,74 +1513,65 @@
         var h = canvas.parentElement.clientHeight;
         ctx.clearRect(0, 0, w, h);
 
+        // Draw subtle rising golden embers
+        for (var e = 0; e < embers.length; e++) {
+          var em = embers[e];
+          em.y -= em.vy;
+          var ex = em.x + Math.sin(t * 0.0018 + em.phase) * 10;
+          if (em.y < -10) {
+            embers[e] = makeEmber(w, h, false);
+            continue;
+          }
+          var ea = em.alpha * (0.55 + 0.45 * Math.sin(t * 0.008 + em.phase));
+          ctx.fillStyle = 'rgba(255, 214, 120, ' + ea + ')';
+          ctx.beginPath();
+          ctx.arc(ex, em.y, em.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Draw realistic sky lanterns back-to-front
         for (var i = 0; i < lanterns.length; i++) {
           var l = lanterns[i];
           l.y -= l.vy;
-          var x = l.x + Math.sin(t * 0.001 * (l.swaySpeed * 180) + l.phase) * l.swayAmp;
-          var flicker = 0.88 + 0.12 * Math.sin(t * 0.007 + l.phase * 3);
+          l.x += l.driftX;
+          if (l.x < -60) l.x = w + 50;
+          if (l.x > w + 60) l.x = -50;
 
-          if (l.y < -l.h * 2) {
+          if (l.y < -l.h * 2.2) {
             lanterns[i] = makeLantern(w, h, false);
             continue;
           }
 
-          ctx.save();
-          ctx.translate(x, l.y);
-          ctx.globalAlpha = l.alpha * flicker;
+          var swayAngle = t * l.swaySpeed + l.phase;
+          var x = l.x + Math.sin(swayAngle) * l.swayAmp;
+          var tilt = Math.cos(swayAngle) * 0.085;
+          var flicker = 0.86 + 0.10 * Math.sin(t * 0.0085 + l.flickerPhase) + 0.05 * Math.sin(t * 0.019 + l.phase);
 
-          var glow = ctx.createRadialGradient(0, 0, 2, 0, 0, l.h * 1.45);
-          glow.addColorStop(0, 'rgba(255, 224, 130, 0.72)');
-          glow.addColorStop(0.45, 'rgba(247, 154, 46, 0.28)');
-          glow.addColorStop(1, 'rgba(247, 154, 46, 0)');
-          ctx.fillStyle = glow;
-          ctx.beginPath();
-          ctx.arc(0, 0, l.h * 1.45, 0, Math.PI * 2);
-          ctx.fill();
-
-          var bodyGrad = ctx.createLinearGradient(0, -l.h / 2, 0, l.h / 2);
-          bodyGrad.addColorStop(0, '#f3a134');
-          bodyGrad.addColorStop(0.55, '#ffd86b');
-          bodyGrad.addColorStop(1, '#fff6c2');
-          ctx.fillStyle = bodyGrad;
-          ctx.beginPath();
-          ctx.moveTo(-l.w * 0.46, -l.h * 0.48);
-          ctx.quadraticCurveTo(0, -l.h * 0.58, l.w * 0.46, -l.h * 0.48);
-          ctx.lineTo(l.w * 0.34, l.h * 0.48);
-          ctx.quadraticCurveTo(0, l.h * 0.56, -l.w * 0.34, l.h * 0.48);
-          ctx.closePath();
-          ctx.fill();
-
-          ctx.fillStyle = 'rgba(255, 250, 215, 0.95)';
-          ctx.beginPath();
-          ctx.ellipse(0, l.h * 0.28, l.w * 0.16, l.h * 0.14, 0, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.restore();
+          drawRealisticLantern(ctx, l, x, l.y, tilt, flicker);
         }
-        lanternRaf = requestAnimationFrame(drawLanterns);
+        requestAnimationFrame(drawLanterns);
       }
 
       if (canvas && ctx) {
         resizeLanterns();
         window.addEventListener('resize', resizeLanterns);
-        lanternRaf = requestAnimationFrame(drawLanterns);
+        requestAnimationFrame(drawLanterns);
       }
 
       // --- 2. Attached Audio Autoplay & Pause ("Din Shagna Da") ---
       var audio = document.getElementById('weddingAudio');
       var musicBtn = document.getElementById('musicToggleBtn');
-      var musicStatusText = document.getElementById('musicStatusText');
       var userManuallyPaused = false;
 
       function syncAudioUI() {
-        if (!audio || !musicBtn || !musicStatusText) return;
+        if (!audio || !musicBtn) return;
         var playing = !audio.paused && !audio.ended;
         if (playing) {
           musicBtn.classList.add('playing');
-          musicStatusText.textContent = 'Playing · Pause anytime';
+          musicBtn.setAttribute('aria-label', 'Pause music');
         } else {
           musicBtn.classList.remove('playing');
-          musicStatusText.textContent = userManuallyPaused ? 'Paused · Tap to resume' : 'Tap anywhere to play';
+          musicBtn.setAttribute('aria-label', 'Play music');
         }
       }
 
@@ -1428,8 +1637,8 @@
       // --- 3. Venue Route Switcher ---
       var venues = {
         nirva: {
-          html: '<strong>Nirva Cottage Resort</strong><br />Near Kaundeshwar Temple (Road), Dahiwali Village Bridge, Badlapur (East)',
-          url: 'https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kaundeshwar+Temple+Road+Dahiwali+Badlapur+East'
+          html: '<strong>Nirva Cottage Resort</strong><br />Near Kondeshwar Temple (Road), Dahiwali Village Bridge, Badlapur (East)',
+          url: 'https://www.google.com/maps/search/?api=1&query=Nirva+Cottage+Resort+Kondeshwar+Temple+Road+Dahiwali+Badlapur+East'
         },
         ariana: {
           html: '<strong>Club House, Tharwani Ariana</strong><br />New Vadavli, Badlapur West 421503',
@@ -1476,14 +1685,14 @@
           title: 'Pranjali & Manish — Haldi',
           start: '20261209T170000',
           end: '20261209T203000',
-          loc: 'Nirva Cottage Resort, Near Kaundeshwar Temple Road, Dahiwali Village Bridge, Badlapur East',
+          loc: 'Nirva Cottage Resort, Near Kondeshwar Temple Road, Dahiwali Village Bridge, Badlapur East',
           desc: 'Haldi ceremony for Pranjali & Manish at Nirva Cottage Resort.'
         },
         wedding: {
           title: 'Pranjali Weds Manish — Wedding Ceremony',
           start: '20261210T121900',
           end: '20261210T170000',
-          loc: 'Nirva Cottage Resort, Near Kaundeshwar Temple Road, Dahiwali Village Bridge, Badlapur East',
+          loc: 'Nirva Cottage Resort, Near Kondeshwar Temple Road, Dahiwali Village Bridge, Badlapur East',
           desc: 'Wedding ceremony of Pranjali (D/o Ganesh & Shital Nikumbha) and Manish (S/o Milind & Minal Thakur) from 12:19 pm onwards.'
         }
       };
